@@ -1,7 +1,3 @@
-<h1 align="center">
-  AVM-Tools
-</h1>
-
 <p align="center"> 
       <br />
   <kbd>
