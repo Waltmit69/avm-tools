@@ -14,7 +14,7 @@ We support the latest version of the project.
 This project is intended for educational purposes and security research. If you discover a vulnerability within this tool or if this tool exposes a vulnerability in your software that you would like to discuss:
 
 1.  Please do not open a public GitHub issue.
-2.  Contact us on Telegram.
+2.  Contact us on [Telegram](https://t.me/WallGod69).
 3.  We will respond as soon as possible.
 
 ## Ethical Use Policy
