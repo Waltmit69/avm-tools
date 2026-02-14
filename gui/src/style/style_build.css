@@ -1,0 +1,237 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: url(img/bg.gif) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 100%;
+    background: transparent;
+    backdrop-filter: blur(4px);
+    padding: 6px 14px;
+    transition: .5s;
+    overflow: hidden;
+    z-index: 2000;
+}
+
+.sidebar.active {
+    width: 260px;
+}
+
+.sidebar .logo-menu {
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+}
+
+.sidebar .logo-menu .logo {
+    font-size: 23px;
+    color: #fff;
+    pointer-events: none;
+    opacity: 0;
+    transition: .3s;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.sidebar.active .logo-menu .logo {
+    opacity: 1;
+    transition-delay: .2s;
+}
+
+
+.sidebar .logo-menu .toggle-btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.sidebar.active .logo-menu .toggle-btn {
+    left: 90%;
+}
+
+.sidebar .list {
+    margin-top: 10px;
+}
+
+.list .list-item {
+    list-style: none;
+    width: 100%;
+    height: 50px;
+    margin: 5px 0;
+    line-height: 50px;
+}
+
+.list .list-item a {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    white-space: nowrap;
+    transition: .5s;
+}
+
+.list .list-item.active a,
+.list .list-item a:hover {
+    background: rgba(255, 255, 255, .2);
+}
+
+.list .list-item a i {
+    min-width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.sidebar .link_name {
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.sidebar.active .link_name {
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: calc(.1s * var(--i));
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: 100% 300px;
+    background-position: 0% 100%;
+    transition: background-position 0.5s;
+}
+
+.maintitle {
+    position: relative;
+    width: 100%;
+    max-width: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.maintitle h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.header-buttons {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.help-button,
+.new-button {
+    background: rgba(80, 166, 239, 0.2);
+    border: 1px solid rgba(80, 166, 239, 0.5);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    backdrop-filter: blur(2px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.help-button:hover,
+.new-button:hover {
+    background: #50A6EF;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(80, 166, 239, 0.4);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.container .selectButton {
+    background: rgba(80, 166, 239, 0.2);
+    border: 1px solid rgba(80, 166, 239, 0.5);
+    color: #fff;
+    width: 43vh;
+    height: 45px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px 18px;
+    font-weight: 600;
+    backdrop-filter: blur(2px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    margin-top: 25px;
+}
+
+.container .selectButton:hover {
+    background: #50A6EF;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(80, 166, 239, 0.4);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.container .selectButton input[type="file"] {
+    display: none;
+}
+
+.container .outputContainer {
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.container .outputBox {
+    color: white;
+    padding: 10px;
+    width: 90vh;
+    height: 50vh;
+    overflow-y: auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}

